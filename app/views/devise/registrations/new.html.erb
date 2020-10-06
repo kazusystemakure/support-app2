@@ -20,6 +20,18 @@
       安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
     </p>
   </div>
+  <div class="img-upload">
+      <div class="weight-bold-text">
+        プロフィール画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+  </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">名前</label>
@@ -100,9 +112,9 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">指導内容(指導希望者のみ）</label>
+      <label class="form-text">指導/スキル(指導希望者のみ）</label>
     </div>
-    <%= f.text_field :skill, class:"input-default", id:"skill", placeholder:"例）ヨガ 指導者の場合"%>
+    <%= f.text_field :skill, class:"input-default", id:"skill", placeholder:"例）ヨガインストラクター"%>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
