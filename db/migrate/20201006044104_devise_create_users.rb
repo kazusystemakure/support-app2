@@ -5,18 +5,18 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       ## Database authenticatable
       t.string :name,               null: false, default: ""
-      t.string :namekane,           null: false, default: ""
+      t.string :namekana,           null: false, default: ""
       t.string :introduction,       default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :postal_code,        null: false, default: ""
-      t.integer :prefecture,        null: false
+      t.string :prefecture,         null: false, default: ""
       t.string :city,               null: false, default: ""
       t.string :address,            null: false, default: ""
       t.string :phone_number ,      null: false, default: ""
-      t.date :birth_date,           null: false
-      t.integer :cotegory_id,       null: false
+      t.string :hobby,              null: false, default: ""
       t.string :skill,              default: ""
+      t.date :birth_date,           null: false
 
       ## Recoverable
       t.string   :reset_password_token

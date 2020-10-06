@@ -10,12 +10,12 @@
 | email                 | string      | null: false                                 |
 | encrypted_password    | string      | null: false                                 |
 | postal_code           | string      | null: false                                 |
-| prefecture            | integer     | null: false                                 |
+| prefecture            | string      | null: false                                 |
 | city                  | string      | null: false                                 |
 | address               | string      | null: false                                 |
 | phone_number          | string      | null: false                                 |
 | birth_date            | date        | null: false                                 |
-| category_id           | integer     | null: false                                 |
+| hobby                 | string      | null: false                                 |
 | skill                 | string      |                                             |
 
 ### Association
