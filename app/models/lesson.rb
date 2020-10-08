@@ -4,6 +4,7 @@ class Lesson < ApplicationRecord
 
   with_options presence: true do
     validates :image
+    validates :content
     validates :name
     validates :text
     validates :price, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }

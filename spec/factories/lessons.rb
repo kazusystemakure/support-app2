@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :lesson do
-    name { 'フィットネスクラス' }
+    name { 'いざハードワーク' }
+    content {'フィットネス' }
     text { 'フィットネスで痩せよう' }
     price { 1000 }
     association :user
