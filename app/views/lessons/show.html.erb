@@ -47,7 +47,7 @@
       <p class='or-text'>or</p>
       <%= link_to '削除', lesson_path, method: :delete, class:'item-destroy' %>
     <% elsif user_signed_in? %>
-      <%= link_to '購入画面に進む', "#" ,class:"item-red-btn1"%>
+      <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id),class:"item-red-btn1"%>
     <% end %>
 
     <div class="option">
