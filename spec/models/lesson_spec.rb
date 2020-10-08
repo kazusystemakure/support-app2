@@ -26,6 +26,12 @@ RSpec.describe Lesson, type: :model do
       end
 
       it 'textが空では登録できないこと' do
+        @lesson.content = nil
+        @lesson.valid?
+        expect(@lesson.errors.full_messages).to include("Content can't be blank")
+      end
+
+      it 'textが空では登録できないこと' do
         @lesson.text = nil
         @lesson.valid?
         expect(@lesson.errors.full_messages).to include("Text can't be blank")

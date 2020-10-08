@@ -16,10 +16,15 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+    @lesson = Lesson.find(params[:id])
+  end
+
+
   private
 
   def lesson_params
-    params.permit(:image, :name, :text, :lesson_date_at, :price). merge(user_id: current_user.id)
+    params.permit(:image, :name, :content, :text, :lesson_date_at, :price). merge(user_id: current_user.id)
   end
 
 end

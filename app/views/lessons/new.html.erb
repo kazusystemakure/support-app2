@@ -29,6 +29,11 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :name, class:"items-text", id:"lesson-name", placeholder:"例）◯◯でストレス解消(40文字まで)", maxlength:"40" %>
+      <div class="weight-bold-text">
+        レッスン内容
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :content, class:"items-text", id:"lesson-content", placeholder:"例）体感トレーニング(40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           レッスンの説明
