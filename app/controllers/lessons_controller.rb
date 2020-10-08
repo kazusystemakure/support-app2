@@ -1,4 +1,6 @@
 class LessonsController < ApplicationController
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+
   def index
     @lessons = Lesson.all.includes(:user).order(id: 'DESC')
   end
@@ -17,15 +19,12 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find(params[:id])
   end
 
   def edit
-    @lesson = Lesson.find(params[:id])
   end
 
   def update
-    @lesson = Lesson.find(params[:id])
     @lesson.update(lesson_params)
     if @lesson.valid?
       redirect_to root_path
@@ -34,12 +33,23 @@ class LessonsController < ApplicationController
     end
   end
 
+  def destroy
+    if @lesson.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
 
 
   private
 
   def lesson_params
     params.require(:lesson).permit(:image, :name, :content, :text, :lesson_date_at, :price). merge(user_id: current_user.id)
+  end
+
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
   end
 
 end
