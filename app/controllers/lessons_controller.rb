@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
   end
 
   def new
-    @lessom = Lesson.new
+    @lesson = Lesson.new
   end
 
   def create
@@ -20,11 +20,26 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(lesson_params)
+    if @lesson.valid?
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 
   def lesson_params
-    params.permit(:image, :name, :content, :text, :lesson_date_at, :price). merge(user_id: current_user.id)
+    params.require(:lesson).permit(:image, :name, :content, :text, :lesson_date_at, :price). merge(user_id: current_user.id)
   end
 
 end
