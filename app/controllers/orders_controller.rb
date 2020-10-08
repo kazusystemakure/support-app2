@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @lesson = Lesson.find(params[:lesson_id])
     @order = Order.new(order_params)
     if @order.valid?
