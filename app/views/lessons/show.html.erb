@@ -9,17 +9,7 @@
     <div class='item-img-content'>
       <%= image_tag @lesson.image ,class:"item-box-img" %>
     </div>
-
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-    <% if user_signed_in? && current_user.id == @lesson.user_id %>
-      <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
-    <% elsif user_signed_in? %>
-      <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
-    <% end %>
-
-    
+  
     <table class="detail-table">
       <tbody>
         <tr>
@@ -50,6 +40,16 @@
         </tr>
       </tbody>
     </table>
+
+    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+    <% if user_signed_in? && current_user.id == @lesson.user_id %>
+      <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+    <% elsif user_signed_in? %>
+      <%= link_to '購入画面に進む', "#" ,class:"item-red-btn1"%>
+    <% end %>
+
     <div class="option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
