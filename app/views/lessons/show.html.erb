@@ -35,7 +35,7 @@
         <tr>
           <th class="detail-item">講師紹介</th>
           <td class="detail-value">
-          <%= link_to @lesson.user.name, root_path %>
+          <%= link_to @lesson.user.name, lesson_user_path(@lesson, @lesson.user) %>
           </td>
         </tr>
       </tbody>

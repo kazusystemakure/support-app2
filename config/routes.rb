@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: "lessons#index"
   resources :lessons do
     resources :orders, only: [:index, :create]
+    resources :users, only: :show
   end
 end
