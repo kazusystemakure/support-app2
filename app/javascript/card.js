@@ -31,4 +31,4 @@ const pay = () => {
     });
   });
 };
-window.addEventListener("load", pay);
+window.addEventListener("turbolinks:load", pay);
