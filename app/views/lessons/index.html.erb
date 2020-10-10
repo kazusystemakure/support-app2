@@ -68,10 +68,7 @@
       またある者は運動や学びに支払った費用が支援に。
     </h2>
     <p class='ad-explain'>
-      オンラインレッスンで手軽に始める。
-    </p>
-    <p class='ad-explain'>
-      一人じゃない。一緒に頑張ろう！
+      オンラインレッスンで、一緒に継続しよう！
     </p>
     <p class='ad-explain'>
       オフィス、自宅、移動中、どこでもできるエクササイズ多数！
@@ -116,10 +113,10 @@
   </div>
   <%# /FURIMAの特徴 %>
 
-  <%# 商品一覧 %>
+  <%# レッスン一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <h2 class='title'>開催レッスン一覧</h2>
+    <%= link_to '新規投稿レッスン', "#", class: "subtitle" %>
     <ul class='item-lists'>
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @lessons.each do |lesson| %>

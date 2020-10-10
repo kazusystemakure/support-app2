@@ -1,9 +1,6 @@
+<%= render "shared/header" %>
+
 <div class="profile-card">
-  <div class=edit-box>
-    <% if user_signed_in? && current_user.id %>
-        <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
-    <% end %>
-  </div>
   <div class="profile-card__inner">
     <div class="profile-thumb">
       <%= image_tag @user.image %>
@@ -14,5 +11,41 @@
       <span class="profile-intro"><%= @user.introduction%></span>
     </div>
     </div>
+    <div class=edit-box>
+      <% if user_signed_in? && current_user.id %>
+        <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
+      <% end %>
+    </div>
+
+    <div class='item-contents'>
+      <h2 class='title'><%= @user.name %> レッスン一覧</h2>
+      <ul class='item-lists'>
+        <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+        <% @lessons.each do |lesson| %>
+          <li class='list'>
+            <%= link_to lesson_path(lesson.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag lesson.image, class: "item-img" %>
+                <%# 商品が売れていればsold outを表示しましょう %>
+                <%# //商品が売れていればsold outを表示しましょう %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= lesson.name %>
+                </h3>
+                <div class='item-price'>
+                  <span><%= lesson.price %>円<br>(税込み)</span>
+                  <div class='star-btn'>
+                    <%= image_tag "star.png", class:"star-icon" %>
+                    <span class='star-count'>0</span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
+<%= render "shared/footer" %>

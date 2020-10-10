@@ -1,7 +1,7 @@
 .profile-card{
   width: 100%;
   max-width:100%;
-  height: 1500px;
+  height: 100%;
   position: relative;
   background: #fff; /*背景の色*/
   box-shadow: 0px 1px 3px rgba(0,0,0,.18);
@@ -10,7 +10,7 @@
 
 .profile-card:before{
  width:120%;
- height:160px;
+ height:130px;
  content:"";
  transform:skew(15deg,10deg);
  background: #f7d2a1; /*斜め背景の色*/
@@ -22,7 +22,7 @@
 
 .profile-card:after{
  width:120%;
- height:160px;
+ height:130px;
  content:"";
  transform:skew(15deg,10deg);
  background: #f7d2a1; /*斜め背景の色*/
@@ -45,7 +45,7 @@
     border-radius: 55px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 50px;
     background: #fff;
 }
 
@@ -87,7 +87,7 @@
   background-color: rgb(255, 255, 255);
   width: 100%;
   min-width: 100%;
-  padding: 30px 5px;
+  padding: 10px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +97,102 @@
   background-color: #f7d2a1;
   font-size: 15px;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: rgb(78, 78, 78);
   margin: 15px 0px 10px 0px;
   padding: 10px 20px;
+}
+
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0px 0px 50px 0px;
+}
+
+.item-contents>.title {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #c58052;
+}
+
+.item-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #c58052;
+  font-weight: bold;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.sold-out {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: crimson;
+  transform: skewY(-10deg);
+}
+
+.sold-out>span {
+  color: #FFF;
+  font-size: 45px;
+  font: bold;
+}
+
+
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-name {
+  font-size: 2.5vh;
+}
+
+.item-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
 }
