@@ -12,13 +12,13 @@
     </div>
     </div>
     <div class=edit-box>
-      <% if user_signed_in? && current_user.id %>
+      <% if user_signed_in? && current_user.id == @user.id %>
         <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
       <% end %>
     </div>
 
     <div class='item-contents'>
-      <h2 class='title'><%= @user.name %> レッスン一覧</h2>
+      <h2 class='title'><%= @user.name %>さんのレッスン一覧</h2>
       <ul class='item-lists'>
         <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
         <% @lessons.each do |lesson| %>

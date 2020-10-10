@@ -4,13 +4,13 @@
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      学びが支援に。
+      運動で支援する。
     </h2>
     <p class='service-explain'>
-      スキマ時間の学びで支援しよう。
+      スキマ時間の指導が支援となる。
     </p>
-    <p class='service-explain'>
-      ＃スキマ支援
+    <p class='service-explain2'>
+      #スキマ支援 #募金プラットフォーム
     </p>
     
   </div>
@@ -116,7 +116,6 @@
   <%# レッスン一覧 %>
   <div class='item-contents'>
     <h2 class='title'>開催レッスン一覧</h2>
-    <%= link_to '新規投稿レッスン', "#", class: "subtitle" %>
     <ul class='item-lists'>
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @lessons.each do |lesson| %>
@@ -167,6 +166,7 @@
       <%# //商品がある場合は表示されないようにしましょう %>
       <%# /商品がない場合のダミー %>
     </ul>
+    <%= link_to '新規レッスン追加', "#", class: "subtitle" %>
   </div>
   <%# /商品一覧 %>
 </div>
