@@ -1,17 +1,18 @@
 <div class="profile-card">
+  <div class=edit-box>
+    <% if user_signed_in? && current_user.id %>
+        <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
+    <% end %>
+  </div>
   <div class="profile-card__inner">
-  <div class="profile-thumb">
-    <%= image_tag @user.image %>
-  </div>
-  <div class="profile-content">
-    <span class="profile-name">名前：<%= @user.name %></span>
-    <span class="profile-job">スキル：<%= @user.skill %></span>
-    <span class="profile-intro">自己紹介：<%= @user.introduction%></span>
-  </div>
-  <div class="profile-sns">
-    <span>FOLLOW ME</span>
-    <a href="#"><i class="fab fa-twitter-square"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fas fa-envelope-square"></i></a>
+    <div class="profile-thumb">
+      <%= image_tag @user.image %>
+    </div>
+    <div class="profile-content">
+      <span class="profile-name"><%= @user.name %></span>
+      <span class="profile-job"><%= @user.skill %></span>
+      <span class="profile-intro"><%= @user.introduction%></span>
+    </div>
+    </div>
   </div>
 </div>
