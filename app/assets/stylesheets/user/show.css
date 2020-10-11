@@ -81,6 +81,16 @@
 
 .profile-intro{
   font-size: 20px;
+  justify-content: center;
+}
+
+.sns-content {
+  display: flex;
+  justify-content: center;
+}
+
+.sns-btn {
+  padding: 10px 20px;
 }
 
 .edit-box {

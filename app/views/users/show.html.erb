@@ -10,6 +10,9 @@
       <span class="profile-job"><%= @user.skill %></span>
       <span class="profile-intro"><%= @user.introduction%></span>
     </div>
+    <div class="sns-content">
+      <%= link_to image_tag('insta.png' , size: '50x50'), "/", class: "sns-btn" %>
+      <%= link_to image_tag('facebook.png' , size: '50x50'), "/", class: "sns-btn" %>
     </div>
     <div class=edit-box>
       <% if user_signed_in? && current_user.id == @user.id %>
