@@ -16,7 +16,6 @@ class User < ApplicationRecord
     validates :city
     validates :address
     validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
-    validates :hobby
     validates :birth_date
     validates :image
   end
