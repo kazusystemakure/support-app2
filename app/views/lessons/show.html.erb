@@ -25,8 +25,12 @@
           <td class="detail-value"><%= @lesson.text %></td>
         </tr>
         <tr>
-          <th class="detail-item">開催日時</th>
-          <td class="detail-value"><%= @lesson.lesson_date_at %></td>
+          <th class="detail-item">開催日</th>
+          <td class="detail-value"><%= @lesson.lesson_date %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">開催時間</th>
+          <td class="detail-value"><%= @lesson.bigin_at.strftime('%H:%M') %> 〜 <%= @lesson.bigin_at.strftime('%H:%M') %></td>
         </tr>
         <tr>
           <th class="detail-item">参加料金</th>

@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
     t.string "content", null: false
     t.string "text", null: false
     t.integer "price", null: false
-    t.datetime "lesson_date_at"
+    t.date "lesson_date"
+    t.time "bigin_at"
+    t.time "closed_at"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

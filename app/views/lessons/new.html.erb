@@ -45,7 +45,23 @@
               開催日時
               <span class="indispensable">必須</span>
             </div>
-            <%= f.datetime_field :lesson_date_at, class: 'lesson-datetime' %>
+            （ 📅マークと⏰マークをタップして入力。）
+            <div class="lesson-datetime">
+              <div class="lesson-date">
+                <p>開催日 </p>
+                <%= f.date_field :lesson_date, class: 'lesson-datetime' %>
+              </div>
+              <div class="lesson-time">
+                <div class="bigin-at">
+                  <p>開始時間</p>
+                  <%= f.time_field :bigin_at, class: 'lesson-datetime' %>
+                </div>
+                <div class="closed-at">
+                  <p>終了時間</p>
+                  <%= f.time_field :closed_at, class: 'lesson-datetime' %>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
       <%# 販売価格 %>

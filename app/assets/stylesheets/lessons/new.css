@@ -109,7 +109,43 @@
   margin-top: 2vh;
 }
 
-/* /商品名と商品説明 */
+/* /レッスン日時 */
+
+.lesson-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3px 30px;
+}
+
+.lesson-datetime p{
+  padding-right: 20px;
+}
+
+.lesson-date {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.lesson-time {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0px 0px 0px;
+}
+
+.bigin-at {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.closed-at {
+  display: flex;
+  align-items: center;
+}
+
+
 
 /* 商品の詳細など */
 .items-detail {
