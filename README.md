@@ -28,7 +28,7 @@
 | --------------------- | ------------| --------------------------------------------|
 | name                  | string      | null: false                                 |
 | text                  | string      | null: false                                 |
-| category_id           | integer     | null: false                                 |
+| level_id              | integer     | null: false                                 |
 | lesson_date           | date        | null: false                                 |
 | bigin_at              | time        | null: false                                 |
 | closed_at             | time        | null: false                                 |
