@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class='main'>
 
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <%# 画面上部のキャッチ部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
       運動で支援する。
@@ -12,60 +12,98 @@
     <p class='service-explain2'>
       #スキマ支援 #募金プラットフォーム
     </p>
-    
-  </div>
-  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
+  </div>>
 
-  <%# FURIMAが選ばれる3つの理由部分 %>
+  <%# スキマ支援の流れ %>
   <div class='select-reason-contents'>
     <h2 class='title'>
-      SUKIMAスキマ支援の流れ
+      スキマ支援の流れ
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
-        <%= image_tag "top1.png", class:"list-pict" %>
+        <%= image_tag "top8.png", class:"list-pict" %>
         <span class='reason-list-number'>1</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>1分</span>
+          の無料登録
+        </h3>
+        <p class='reason-list-description'>
+          スマホで誰でも簡単登録。登録後すぐに始められる。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "top5.png", class:"list-pict" %>
+        <span class='reason-list-number'>２</span>
         <h3 class='reason-list-text'>
           <span class='reason-list-blue-text'>忙しい</span>
           合間で。
         </h3>
         <p class='reason-list-description'>
-          時間帯にあったプログラムをすぐ予約
+          仕事の休憩や在宅の合間、家事や育児の合間でも
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "top2.png", class:"list-pict" %>
-        <span class='reason-list-number'>2</span>
+        <%= image_tag "sumaho2.png", class:"list-pict" %>
+        <span class='reason-list-number'>３</span>
         <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>15分</span>
-          のスキマ運動
+          <span class='reason-list-blue-text'>スマホ</span>
+          で予約決済。
         </h3>
         <p class='reason-list-description'>
-          仕事の休憩、子育ての合間に
+          スムーズな予約とカード決済。開始5分前まで予約可。
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "top3.png", class:"list-pict" %>
-        <span class='reason-list-number'>3</span>
+        <%= image_tag "top11.png", class:"list-pict" %>
+        <span class='reason-list-number'>４</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>15分〜</span>
+          レッスン参加
+        </h3>
+        <p class='reason-list-description'>
+          仕事や育児など自身のケアと、ストレスマネジメント。痩せやすい身体づくりも。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "top13.png", class:"list-pict" %>
+        <span class='reason-list-number'>５</span>
         <h3 class='reason-list-text'>
           運動で
           <span class='reason-list-blue-text'>手助け。</span>
         </h3>
         <p class='reason-list-description'>
-          自分のために学び、自分のための運動が、誰かの支援に。
+          自分のためのスキマ運動が、やればやるだけ支援に。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "top12.png", class:"list-pict" %>
+        <span class='reason-list-number'>6</span>
+        <h3 class='reason-list-text'>
+          誰もが
+          <span class='reason-list-blue-text'>指導者に。</span>
+        </h3>
+        <p class='reason-list-description'>
+          また、自分の知識の提供が、違う形（支援）へ変化する。
         </p>
       </li>
     </ul>
   </div>
-  <%# /FURIMAが選ばれる3つの理由部分 %>
 
-  <%# 画面中央の「会員数日本一位」帯部分 %>
+  <%# 指導者 %>
+  <div class='feature-contents'>
+    <h2 class='title'>
+      あなたの知識を違う形へ。
+    </h2>
+    <%= link_to '新規レッスン追加', new_lesson_path, class: "subtitle" %>
+  </div>
+
+  <%# 画面中央キャッチ部分 %>
   <div class='ad-contents'>
     <h2 class='ad-title'>
       ある者は知識の提供が支援となり、
     </h2>
     <h2 class='ad-title'>
-      またある者は運動や学びに支払った費用が支援に。
+      またある者は運動に支払った費用が支援に。
     </h2>
     <p class='ad-explain'>
       オンラインレッスンで、一緒に継続しよう！
@@ -74,57 +112,18 @@
       オフィス、自宅、移動中、どこでもできるエクササイズ多数！
     </p>
   </div>
-  <%# /画面中央の「会員数日本一位」帯部分 %>
 
-  <%# FURIMAの特徴 %>
-  <div class='feature-contents'>
-    <h2 class='title'>
-      使い方と支払い
-    </h2>
-    <ul class='feature-lists'>
-      <li class='list'>
-        <%= image_tag "sumaho1.png", class:"list-pict" %>
-        <h3 class='feature-list-text'>
-          時間にあったレッスンを予約。
-        </h3>
-        <p class='feature-list-description'>
-          直前（5分前）まで予約可能！時間が空けばすぐ予約！
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "sumaho2.png", class:"list-pict" %>
-        <h3 class='feature-list-text'>
-          スマホでカード決済。
-        </h3>
-        <p class='feature-list-description'>
-          その場でカード決済で楽々予約。
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "shien1.png", class:"list-pict" %>
-        <h3 class='feature-list-text'>
-          支払い後は、支援金に。
-        </h3>
-        <p class='feature-list-description'>
-          定期的に変更する支援に、賛同いただける指導者のレッスン項目となります。
-        </p>
-      </li>
-    </ul>
-  </div>
-  <%# /FURIMAの特徴 %>
+  
 
   <%# レッスン一覧 %>
   <div class='item-contents'>
     <h2 class='title'>開催レッスン一覧</h2>
     <ul class='item-lists'>
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @lessons.each do |lesson| %>
         <li class='list'>
           <%= link_to lesson_path(lesson.id) do %>
             <div class='item-img-content'>
               <%= image_tag lesson.image, class: "item-img" %>
-              <%# 商品が売れていればsold outを表示しましょう %>
-              <%# //商品が売れていればsold outを表示しましょう %>
             </div>
             <div class='item-info'>
               <h3 class='item-name'>
@@ -141,33 +140,7 @@
           <% end %>
         </li>
       <% end %>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <%# 商品がない場合のダミー %>
-      <%# 商品がある場合は表示されないようにしましょう %>
-      <% if @items == "" %>
-        <li class='list'>
-          <%= link_to '#', method: :get do %>
-            <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
-            <div class='item-info'>
-              <h3 class='item-name'>
-                商品を出品してね！
-              </h3>
-              <div class='item-price'>
-                <span>99999999円<br>(税込み)</span>
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </li>
-      <% end %>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# /商品がない場合のダミー %>
     </ul>
-    <%= link_to '新規レッスン追加', "#", class: "subtitle" %>
   </div>
-  <%# /商品一覧 %>
 </div>
 <%= render "shared/footer" %>
