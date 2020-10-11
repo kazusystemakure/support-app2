@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
 
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "content", null: false
+    t.integer "level_id", null: false
     t.string "text", null: false
     t.integer "price", null: false
-    t.date "lesson_date"
-    t.time "bigin_at"
-    t.time "closed_at"
+    t.date "lesson_date", null: false
+    t.time "bigin_at", null: false
+    t.time "closed_at", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
     t.string "city", default: "", null: false
     t.string "address", default: "", null: false
     t.string "phone_number", default: "", null: false
-    t.string "hobby", default: "", null: false
     t.string "skill", default: ""
     t.date "birth_date", null: false
     t.string "reset_password_token"

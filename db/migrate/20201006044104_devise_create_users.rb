@@ -14,7 +14,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :city,               null: false, default: ""
       t.string :address,            null: false, default: ""
       t.string :phone_number ,      null: false, default: ""
-      t.string :hobby,              null: false, default: ""
       t.string :skill,              default: ""
       t.date :birth_date,           null: false
 
