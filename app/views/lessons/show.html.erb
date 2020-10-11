@@ -30,7 +30,7 @@
         </tr>
         <tr>
           <th class="detail-item">開催時間</th>
-          <td class="detail-value"><%= @lesson.bigin_at.strftime('%H:%M') %> 〜 <%= @lesson.bigin_at.strftime('%H:%M') %></td>
+          <td class="detail-value"><%= @lesson.bigin_at.strftime('%H:%M') %> 〜 <%= @lesson.closed_at.strftime('%H:%M') %></td>
         </tr>
         <tr>
           <th class="detail-item">参加料金</th>
@@ -47,7 +47,7 @@
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? && current_user.id == @lesson.user_id %>
-      <%= link_to '商品の編集', edit_lesson_path, method: :get, class: "item-red-btn" %>
+      <%= link_to 'レッスン編集', edit_lesson_path, method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', lesson_path, method: :delete, class:'item-destroy' %>
     <% elsif user_signed_in? %>
