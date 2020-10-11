@@ -15,7 +15,6 @@
 | address               | string      | null: false                                 |
 | phone_number          | string      | null: false                                 |
 | birth_date            | date        | null: false                                 |
-| hobby                 | string      | null: false                                 |
 | skill                 | string      |                                             |
 
 ### Association
@@ -30,6 +29,9 @@
 | name                  | string      | null: false                                 |
 | text                  | string      | null: false                                 |
 | category_id           | integer     | null: false                                 |
+| lesson_date           | date        | null: false                                 |
+| bigin_at              | time        | null: false                                 |
+| closed_at             | time        | null: false                                 |
 | price                 | string      | null: false                                 |
 | user_id               | references  | null: false, null: false, foreign_key: true |
 
