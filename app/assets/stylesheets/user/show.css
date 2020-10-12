@@ -164,13 +164,13 @@
   top: 40%;
   width: 100%;
   text-align: center;
-  background-color: crimson;
+  background-color: rgb(201, 179, 153);
   transform: skewY(-10deg);
 }
 
 .sold-out>span {
   color: #FFF;
-  font-size: 45px;
+  font-size: 25px;
   font: bold;
 }
 

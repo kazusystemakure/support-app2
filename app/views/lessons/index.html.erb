@@ -120,25 +120,27 @@
     <h2 class='title'>開催レッスン一覧</h2>
     <ul class='item-lists'>
       <% @lessons.each do |lesson| %>
-        <li class='list'>
-          <%= link_to lesson_path(lesson.id) do %>
-            <div class='item-img-content'>
-              <%= image_tag lesson.image, class: "item-img" %>
-            </div>
-            <div class='item-info'>
-              <h3 class='item-name'>
-                <%= lesson.name %>
-              </h3>
-              <div class='item-price'>
-                <span><%= lesson.price %>円<br>(税込み)</span>
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
+        <% if lesson.lesson_date > Date.today %>
+          <li class='list'>
+            <%= link_to lesson_path(lesson.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag lesson.image, class: "item-img" %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= lesson.name %>
+                </h3>
+                <div class='item-price'>
+                  <span><%= lesson.price %>円<br>(税込み)</span>
+                  <div class='star-btn'>
+                    <%= image_tag "star.png", class:"star-icon" %>
+                    <span class='star-count'>0</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </li>
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
