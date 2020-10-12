@@ -67,6 +67,16 @@ app/assets/stylesheets/items/new.css %>
           </div>
         </div>
       </div>
+      <div class="weight-bold-text">
+        ZOOM ID（URL）
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.url_field(:zoom_url, class:"items-text", id:"zoom-url", placeholder:"例）https:// 〜 ", maxlength:"100") %>
+      <div class="weight-bold-text">
+        ZOOM パスワード
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :zoom_password, class:"items-text", id:"zoom-url", placeholder:"例）パスワード ", maxlength:"40" %>
     </div>
     <%# 販売価格 %>
     <div class="sell-price">

@@ -42,6 +42,14 @@
           <%= link_to @lesson.user.name, user_path(@lesson.user) %>
           </td>
         </tr>
+          <tr>
+            <th class="detail-item">ZOOM ID(URL)</th>
+            <td class="detail-value"><%= link_to "こちら", @lesson.zoom_url %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">ZOOM パスワード</th>
+            <td class="detail-value"><%= @lesson.zoom_password %></td>
+          </tr>
       </tbody>
     </table>
 

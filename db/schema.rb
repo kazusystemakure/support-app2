@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
     t.date "lesson_date", null: false
     t.time "bigin_at", null: false
     t.time "closed_at", null: false
+    t.string "zoom_url", null: false
+    t.string "zoom_password", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
