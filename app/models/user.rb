@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :lessons
+  has_many :orders
   has_one_attached :image
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :publish
 
   with_options presence: true do
     validates :name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters.' }
@@ -15,7 +19,6 @@ class User < ApplicationRecord
     validates :city
     validates :address
     validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
-    validates :hobby
     validates :birth_date
     validates :image
   end

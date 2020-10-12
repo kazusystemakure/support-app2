@@ -1,17 +1,57 @@
+<%= render "shared/header" %>
+
 <div class="profile-card">
   <div class="profile-card__inner">
-  <div class="profile-thumb">
-    <%= image_tag @user.image %>
-  </div>
-  <div class="profile-content">
-    <span class="profile-name">名前：<%= @user.name %></span>
-    <span class="profile-job">スキル：<%= @user.skill %></span>
-    <span class="profile-intro">自己紹介：<%= @user.introduction%></span>
-  </div>
-  <div class="profile-sns">
-    <span>FOLLOW ME</span>
-    <a href="#"><i class="fab fa-twitter-square"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fas fa-envelope-square"></i></a>
+    <div class="profile-thumb">
+      <%= image_tag @user.image %>
+    </div>
+    <div class="profile-content">
+      <span class="profile-name"><%= @user.name %></span>
+      <span class="profile-job"><%= @user.skill %></span>
+      <span class="profile-intro"><%= @user.introduction%></span>
+    </div>
+    <div class="sns-content">
+      <%= link_to image_tag('insta.png' , size: '50x50'), "/", class: "sns-btn" %>
+      <%= link_to image_tag('facebook.png' , size: '50x50'), "/", class: "sns-btn" %>
+    </div>
+    <div class=edit-box>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
+      <% end %>
+    </div>
+
+    <div class='item-contents'>
+      <h2 class='title'><%= @user.name %>さんのレッスン一覧</h2>
+      <ul class='item-lists'>
+        <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+        <% @lessons.each do |lesson| %>
+          <li class='list'>
+            <%= link_to lesson_path(lesson.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag lesson.image, class: "item-img" %>
+                  <% if lesson.lesson_date < Date.today %>
+                    <div class='sold-out'>
+                      <span>END!!</span>
+                    </div>
+                  <% end %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= lesson.name %>
+                </h3>
+                <div class='item-price'>
+                  <span><%= lesson.price %>円<br>(税込み)</span>
+                  <div class='star-btn'>
+                    <%= image_tag "star.png", class:"star-icon" %>
+                    <span class='star-count'>0</span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
+<%= render "shared/footer" %>

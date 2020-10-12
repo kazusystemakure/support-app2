@@ -1,6 +1,7 @@
 .profile-card{
   width: 100%;
   max-width:100%;
+  height: 100%;
   position: relative;
   background: #fff; /*背景の色*/
   box-shadow: 0px 1px 3px rgba(0,0,0,.18);
@@ -14,19 +15,19 @@
  transform:skew(15deg,10deg);
  background: #f7d2a1; /*斜め背景の色*/
  position:  absolute;
- top:-15%;
+ top:-10%;
  left:-10%;
  z-index: 0;
 }
 
 .profile-card:after{
  width:120%;
- height:140px;
+ height:130px;
  content:"";
  transform:skew(15deg,10deg);
  background: #f7d2a1; /*斜め背景の色*/
  position:  absolute;
- bottom:-15%;
+ bottom:-10%;
  left:-10%;
  z-index: 0;
 }
@@ -38,13 +39,13 @@
 
 .profile-thumb{
     overflow: hidden;
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     border: #fff 3px solid;
     border-radius: 55px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 50px;
     background: #fff;
 }
 
@@ -55,10 +56,8 @@
 }
 
 .profile-content{
-  margin: 0 0 49px;
-  padding: 15px;
-  
-  
+  margin: 0 0 10px;
+  padding: 40px 0 0 10px;
 }
 
 .profile-content span{
@@ -67,10 +66,10 @@
 }
 
 .profile-name{
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   font-weight: bold;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .profile-job{
@@ -82,22 +81,128 @@
 
 .profile-intro{
   font-size: 20px;
+  justify-content: center;
 }
 
-.profile-sns {
-  padding: 5px 0;
+.sns-content {
+  display: flex;
+  justify-content: center;
+}
+
+.sns-btn {
+  padding: 10px 20px;
+}
+
+.edit-box {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  min-width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-btn {
+  background-color: #f7d2a1;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(78, 78, 78);
+  margin: 15px 0px 10px 0px;
+  padding: 10px 20px;
+}
+
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0px 0px 50px 0px;
+}
+
+.item-contents>.title {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #c58052;
+}
+
+.item-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #c58052;
+  font-weight: bold;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.sold-out {
+  position: absolute;
+  top: 40%;
+  width: 100%;
   text-align: center;
-  color: #fff;
+  background-color: rgb(201, 179, 153);
+  transform: skewY(-10deg);
 }
 
-.profile-sns span{
-  display: block;
-  font-size: 10px;
-  
+.sold-out>span {
+  color: #FFF;
+  font-size: 25px;
+  font: bold;
 }
 
-.profile-sns a {
-  font-size: 30px;
-    margin: 0 5px;
-    color: #fff;
+
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-name {
+  font-size: 2.5vh;
+}
+
+.item-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
 }

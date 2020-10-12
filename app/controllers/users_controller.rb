@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
+  before_action :move_to_new_user_session
+
   def show
-    @lseeon = Lesson.find(params[:lesson_id])
     @user = User.find(params[:id])
+    @lessons = @user.lessons
+    @orders = @user.orders
+    return redirect_to root_path if @user.publish_id==1 && current_user.id != @user.id
   end
 
   def edit
     @user = User.find(params[:id])
+    return redirect_to root_path if current_user.id != @user.id
   end
 
   def update
@@ -19,7 +24,13 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :namekana, :introduction, :email, :password ,:password_confirmation, :postal_code, :prefecture, :city, :address, :phone_number, :hobby, :skill, :birth_date, :birth_date, :image)
+    params.require(:user).permit(:name, :namekana, :introduction, :email, :password ,:password_confirmation, :postal_code, :prefecture, :city, :address, :phone_number, :skill, :birth_date, :birth_date, :publish_id, :image)
   end
-
+  
+  def move_to_new_user_session
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
+  end
+    
 end

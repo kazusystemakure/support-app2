@@ -28,14 +28,17 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :name, class:"items-text", id:"lesson-name", placeholder:"例）◯◯でストレス解消(40文字まで)", maxlength:"40" %>
+        
         <div class="weight-bold-text">
-          レッスン内容
+          運動量
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :content, class:"items-text", id:"lesson-content", placeholder:"例）体感トレーニング(40文字まで)", maxlength:"40" %>
+        <%#= f.text_area :content, class:"items-text", id:"lesson-content", placeholder:"例）体感トレーニング(40文字まで)", maxlength:"40" %>
+        <%= f.collection_select(:level_id, Level.all, :id, :name, {}, {class:"select-box", id:"lesson-level"}) %>
+
         <div class="items-explain">
           <div class="weight-bold-text">
-            レッスンの説明
+            レッスン説明
             <span class="indispensable">必須</span>
           </div>
           <%= f.text_area :text, class:"items-text", id:"lesson-info", placeholder:"レッスンの説明（内容、時間、要項、注意点など、1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
@@ -45,7 +48,23 @@
               開催日時
               <span class="indispensable">必須</span>
             </div>
-            <%= f.datetime_field :lesson_date_at, class: 'lesson-datetime' %>
+            （ 📅マークと⏰マークをタップして入力。）
+            <div class="lesson-datetime">
+              <div class="lesson-date">
+                <p>開催日 </p>
+                <%= f.date_field :lesson_date, class: 'lesson-datetime' %>
+              </div>
+              <div class="lesson-time">
+                <div class="bigin-at">
+                  <p>開始時間</p>
+                  <%= f.time_field :bigin_at, class: 'lesson-datetime' %>
+                </div>
+                <div class="closed-at">
+                  <p>終了時間</p>
+                  <%= f.time_field :closed_at, class: 'lesson-datetime' %>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
       <%# 販売価格 %>

@@ -67,8 +67,11 @@
 }
 
 .brand-list {
+  font-size: 20px;
+  margin: 1vh 0;
   text-decoration: none;
-  color: #333333;
+  color: #c58052;
+  font-weight: bold;
 }
 
 .lists-right {

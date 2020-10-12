@@ -73,6 +73,11 @@
   font-weight: bold;
 }
 
+.form-text-publish>p {
+  font-size: 12px;
+  padding-top: 10px;
+}
+
 .input-default {
   width: 100%;
   margin-top: 5px;
