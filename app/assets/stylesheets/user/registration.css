@@ -55,7 +55,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 30px auto;
   padding-top: 20px;
 }
 
@@ -71,6 +71,11 @@
 .form-text {
   font-size: 14px;
   font-weight: bold;
+}
+
+.form-text-publish>p {
+  font-size: 12px;
+  padding-top: 10px;
 }
 
 .input-default {

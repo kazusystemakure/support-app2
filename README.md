@@ -16,6 +16,7 @@
 | phone_number          | string      | null: false                                 |
 | birth_date            | date        | null: false                                 |
 | skill                 | string      |                                             |
+| publish_id            | integer     |                                             |
 
 ### Association
 - has_many :lessons

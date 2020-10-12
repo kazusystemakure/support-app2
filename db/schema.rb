@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
     t.string "phone_number", default: "", null: false
     t.string "skill", default: ""
     t.date "birth_date", null: false
+    t.integer "publish_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
