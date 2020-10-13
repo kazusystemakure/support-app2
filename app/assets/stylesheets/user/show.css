@@ -133,6 +133,7 @@
   line-height: 1.4;
   font-weight: bold;
   color: #000000;
+  margin-bottom: 10px;
 }
 
 .item-contents>.subtitle {
@@ -162,6 +163,7 @@
 }
 
 .item-img {
+  margin-top: 10px;
   width: 33vh;
   height: 33vh;
 }
