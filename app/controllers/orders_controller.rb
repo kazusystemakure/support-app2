@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     if @order.valid?
       pay_lesson
       @order.save
-      redirect_to root_path
+      redirect_to user_path(@order.user)
     else
       render 'index'
     end

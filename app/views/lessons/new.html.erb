@@ -7,7 +7,7 @@
     <h2 class="items-sell-title">レッスン内容入力</h2>
     <%= form_with model: @lesson, url: lessons_path, local: true do |f| %>
       <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-      <%# render 'shared/error_messages', model: f.object %>
+      <%= render 'shared/error_messages', model: f.object %>
 
       <div class="img-upload">
         <div class="weight-bold-text">
@@ -21,21 +21,18 @@
           <%= f.file_field :image, id:"item-image" %>
         </div>
       </div>
-      <%# 商品名と商品説明 %>
+      <%# レッスン詳細 %>
       <div class="new-items">
         <div class="weight-bold-text">
           レッスン名
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :name, class:"items-text", id:"lesson-name", placeholder:"例）◯◯でストレス解消(40文字まで)", maxlength:"40" %>
-        
         <div class="weight-bold-text">
           運動量
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.text_area :content, class:"items-text", id:"lesson-content", placeholder:"例）体感トレーニング(40文字まで)", maxlength:"40" %>
         <%= f.collection_select(:level_id, Level.all, :id, :name, {}, {class:"select-box", id:"lesson-level"}) %>
-
         <div class="items-explain">
           <div class="weight-bold-text">
             レッスン説明
@@ -44,30 +41,41 @@
           <%= f.text_area :text, class:"items-text", id:"lesson-info", placeholder:"レッスンの説明（内容、時間、要項、注意点など、1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
         </div>
         <div class="items-explain">
-            <div class="weight-bold-text">
-              開催日時
-              <span class="indispensable">必須</span>
+          <div class="weight-bold-text">
+            開催日時
+            <span class="indispensable">必須</span>
+          </div>
+          （ 📅マークと⏰マークをタップして入力。）
+          <div class="lesson-datetime">
+            <div class="lesson-date">
+              <p>開催日 </p>
+              <%= f.date_field :lesson_date, class: 'lesson-datetime' %>
             </div>
-            （ 📅マークと⏰マークをタップして入力。）
-            <div class="lesson-datetime">
-              <div class="lesson-date">
-                <p>開催日 </p>
-                <%= f.date_field :lesson_date, class: 'lesson-datetime' %>
+            <div class="lesson-time">
+              <div class="bigin-at">
+                <p>開始時間</p>
+                <%= f.time_field :bigin_at, class: 'lesson-datetime' %>
               </div>
-              <div class="lesson-time">
-                <div class="bigin-at">
-                  <p>開始時間</p>
-                  <%= f.time_field :bigin_at, class: 'lesson-datetime' %>
-                </div>
-                <div class="closed-at">
-                  <p>終了時間</p>
-                  <%= f.time_field :closed_at, class: 'lesson-datetime' %>
-                </div>
+              <div class="closed-at">
+                <p>終了時間</p>
+                <%= f.time_field :closed_at, class: 'lesson-datetime' %>
               </div>
             </div>
+          </div>
         </div>
+        <div class="weight-bold-text">
+          ZOOM ID（URL）
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.url_field(:zoom_url, class:"items-text", id:"zoom-url", placeholder:"例）https:// 〜 ", maxlength:"100") %>
+        <div class="weight-bold-text">
+          ZOOM パスワード
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :zoom_password, class:"items-text", id:"zoom-url", placeholder:"例）パスワード ", maxlength:"40" %>
       </div>
-      <%# 販売価格 %>
+
+      <%# 価格 %>
       <div class="sell-price">
         <div class="weight-bold-text question-text">
           <span>価格<br>(¥500〜50,000)</span>
@@ -82,6 +90,7 @@
           <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）500" %>
         </div>
       </div>
+
       <%# 注意書き %>
       <div class="caution">
         <p class="sentence">
@@ -95,13 +104,13 @@
           に同意したことになります。
         </p>
       </div>
+
       <%# 下部ボタン %>
       <div class="sell-btn-contents">
         <%= f.submit "追加する" ,class:"sell-btn" %>
         <%=link_to 'もどる', root_path, class:"back-btn" %>
       </div>
-      <%# /下部ボタン %>
-      </div>
+    </div>
     <% end %>
 
   <footer class="items-sell-footer">

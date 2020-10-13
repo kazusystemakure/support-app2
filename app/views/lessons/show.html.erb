@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<%# 商品の概要 %>
+<%# レッスン詳細 %>
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
@@ -44,13 +44,29 @@
         </tr>
       </tbody>
     </table>
+    <p>購入後に、ZOOM IDとパスワードが表示されます。</p>
+    <table class="detail-table">
+      <tbody>
+        <% if user_signed_in? && current_user.id == @order_user_id%>
+          <tr>
+            <th class="detail-item">ZOOM ID(URL)</th>
+            <td class="detail-value"><%= link_to "こちら", @lesson.zoom_url %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">ZOOM パスワード</th>
+            <td class="detail-value"><%= @lesson.zoom_password %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+    <%# ログインユーザーとレッスン投稿ユーザーが、同一人物の場合 %>
     <% if user_signed_in? && current_user.id == @lesson.user_id %>
       <%= link_to 'レッスン編集', edit_lesson_path, method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', lesson_path, method: :delete, class:'item-destroy' %>
-    <% elsif user_signed_in? %>
+    <%# 未ログインユーザーの場合 %>
+    <% elsif user_signed_in? && current_user.id != @order_user_id%>
       <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id),class:"item-red-btn1"%>
     <% end %>
 
@@ -65,7 +81,6 @@
       </div>
     </div>
   </div>
-  <%# /商品の概要 %>
 
   <div class="comment-box">
     <form>

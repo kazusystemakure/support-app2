@@ -34,11 +34,13 @@
 | bigin_at              | time        | null: false                                 |
 | closed_at             | time        | null: false                                 |
 | price                 | string      | null: false                                 |
+| zoom_url              | string      | null: false                                 |
+| zoom_password         | string      | null: false                                 |
 | user_id               | references  | null: false, null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- has_one :order
+- has_many :orders
 
 
 ## orders テーブル

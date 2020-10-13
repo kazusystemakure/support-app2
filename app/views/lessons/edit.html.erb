@@ -1,4 +1,4 @@
-<%# cssは商品出品のものを併用しています。
+<%# cssは商品出品のものを併用。
 app/assets/stylesheets/items/new.css %>
 
 <div class="items-sell-contents">
@@ -11,7 +11,6 @@ app/assets/stylesheets/items/new.css %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
     <%# レッスン画像 %>
     <div class="img-upload">
@@ -37,7 +36,6 @@ app/assets/stylesheets/items/new.css %>
           運動量
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.text_area :content, class:"items-text", id:"lesson-content", placeholder:"例）体感トレーニング(40文字まで)", maxlength:"40" %>
         <%= f.collection_select(:level_id, Level.all, :id, :name, {}, {class:"select-box", id:"lesson-level"}) %>
       <div class="items-explain">
         <div class="weight-bold-text">
@@ -69,6 +67,16 @@ app/assets/stylesheets/items/new.css %>
           </div>
         </div>
       </div>
+      <div class="weight-bold-text">
+        ZOOM ID（URL）
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.url_field(:zoom_url, class:"items-text", id:"zoom-url", placeholder:"例）https:// 〜 ", maxlength:"100") %>
+      <div class="weight-bold-text">
+        ZOOM パスワード
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :zoom_password, class:"items-text", id:"zoom-url", placeholder:"例）パスワード ", maxlength:"40" %>
     </div>
     <%# 販売価格 %>
     <div class="sell-price">
@@ -99,12 +107,12 @@ app/assets/stylesheets/items/new.css %>
       </p>
     </div>
     <P>※画像と時間は、再入力が必要です</p>
+
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "変更する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-    <%# /下部ボタン %>
   </div>
   <% end %>
   <footer class="items-sell-footer">

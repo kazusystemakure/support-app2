@@ -121,11 +121,19 @@
   margin: 0px 0px 50px 0px;
 }
 
-.item-contents>.title {
+.item-contents>.title-held-list {
   font-size: 25px;
   line-height: 1.4;
   font-weight: bold;
   color: #c58052;
+}
+
+.item-contents>.title-participation-list {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
 }
 
 .item-contents>.subtitle {
@@ -155,6 +163,7 @@
 }
 
 .item-img {
+  margin-top: 10px;
   width: 33vh;
   height: 33vh;
 }
