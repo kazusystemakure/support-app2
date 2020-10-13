@@ -19,6 +19,11 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    @orders = @lesson.orders
+    @orders.each do |order|
+      @order_user_id = order.user_id
+    end
   end
 
   def edit

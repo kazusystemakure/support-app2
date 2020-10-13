@@ -42,6 +42,11 @@
           <%= link_to @lesson.user.name, user_path(@lesson.user) %>
           </td>
         </tr>
+      </tbody>
+    </table>
+    <table class="detail-table">
+      <tbody>
+        <% if user_signed_in? && current_user.id == @order_user_id%>
           <tr>
             <th class="detail-item">ZOOM ID(URL)</th>
             <td class="detail-value"><%= link_to "こちら", @lesson.zoom_url %></td>
@@ -50,6 +55,7 @@
             <th class="detail-item">ZOOM パスワード</th>
             <td class="detail-value"><%= @lesson.zoom_password %></td>
           </tr>
+        <% end %>
       </tbody>
     </table>
 
@@ -59,7 +65,7 @@
       <p class='or-text'>or</p>
       <%= link_to '削除', lesson_path, method: :delete, class:'item-destroy' %>
     <%# 未ログインユーザーの場合 %>
-    <% elsif user_signed_in? %>
+    <% elsif user_signed_in? && current_user.id != @order_user_id%>
       <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id),class:"item-red-btn1"%>
     <% end %>
 
