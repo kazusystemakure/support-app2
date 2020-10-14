@@ -125,12 +125,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Phone number can't be blank")
       end
 
-      it 'hobbyが空では登録できないこと' do
-        @user.hobby = nil
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Hobby can't be blank")
-      end
-
       it 'birth_dateが空では登録できないこと' do
         @user.birth_date = nil
         @user.valid?

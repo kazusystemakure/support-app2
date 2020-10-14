@@ -25,10 +25,10 @@ RSpec.describe Lesson, type: :model do
         expect(@lesson.errors.full_messages).to include("Name can't be blank")
       end
 
-      it 'textが空では登録できないこと' do
-        @lesson.content = nil
+      it 'level_idが空では登録できない' do
+        @lesson.level_id = 1
         @lesson.valid?
-        expect(@lesson.errors.full_messages).to include("Content can't be blank")
+        expect(@lesson.errors.full_messages).to include('Level Select')
       end
 
       it 'textが空では登録できないこと' do
@@ -53,6 +53,37 @@ RSpec.describe Lesson, type: :model do
         @lesson.price = 50_001
         @lesson.valid?
         expect(@lesson.errors.full_messages).to include('Price Out of setting range')
+      end
+
+
+      it 'lesson_dateが空では登録できないこと' do
+        @lesson.lesson_date = nil
+        @lesson.valid?
+        expect(@lesson.errors.full_messages).to include("Lesson date can't be blank")
+      end
+
+      it 'bigin_atが空では登録できないこと' do
+        @lesson.bigin_at = nil
+        @lesson.valid?
+        expect(@lesson.errors.full_messages).to include("Bigin at can't be blank")
+      end
+
+      it 'closed_atが空では登録できないこと' do
+        @lesson.closed_at = nil
+        @lesson.valid?
+        expect(@lesson.errors.full_messages).to include("Closed at can't be blank")
+      end
+
+      it 'zoom_urlが空では登録できないこと' do
+        @lesson.zoom_url = nil
+        @lesson.valid?
+        expect(@lesson.errors.full_messages).to include("Zoom url can't be blank")
+      end
+
+      it 'closed_atが空では登録できないこと' do
+        @lesson.zoom_password = nil
+        @lesson.valid?
+        expect(@lesson.errors.full_messages).to include("Zoom password can't be blank")
       end
     end
   end
