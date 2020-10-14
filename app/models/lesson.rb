@@ -10,6 +10,9 @@ class Lesson < ApplicationRecord
     validates :image
     validates :name
     validates :text
+    validates :lesson_date
+    validates :bigin_at
+    validates :closed_at
     validates :zoom_url
     validates :zoom_password
     validates :price, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
