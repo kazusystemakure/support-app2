@@ -55,8 +55,7 @@
 | --------------------- | ------------| --------------------------------------------|
 | name                  | string      | null: false                                 |
 | name_kane             | string      | null: false                                 |
-| sex                   | integer     | null: false                                 |
-| hobby                 | string      | null: false                                 |
+| introduction          | string      |                                             |
 | email                 | string      | null: false                                 |
 | encrypted_password    | string      | null: false                                 |
 | postal_code           | string      | null: false                                 |
@@ -65,11 +64,12 @@
 | address               | string      | null: false                                 |
 | phone_number          | string      | null: false                                 |
 | birth_date            | date        | null: false                                 |
+| skill                 | string      |                                             |
+| publish_id            | integer     |                                             |
 
 ### Association
 - has_many :lessons
 - has_many :orders
-- has_one :teacher
 
 
 ## lessons テーブル
@@ -102,21 +102,3 @@
 ### Association
 - belongs_to :user
 - belongs_to :lesson
-
-
-## teachers テーブル
-
-| Column                | Type        | Options                                     |
-| --------------------- | ------------| --------------------------------------------|
-| publish_id            | integer     | null: false                                 |
-| skill                 | string      | null: false                                 |
-| introduction          | string      | null: false                                 |
-| homepage_url          | string      | null: false                                 |
-| instagram_url         | string      | null: false                                 |
-| facebook_url          | string      | null: false                                 |
-| youtube_url           | string      | null: false                                 |
-| user_id               | references  | null: false, null: false, foreign_key: true |
-
-
-### Association
-- belongs_to :user

@@ -8,8 +8,8 @@ class CreateLessons < ActiveRecord::Migration[6.0]
       t.date :lesson_date,                 null: false
       t.time :bigin_at,                    null: false
       t.time :closed_at,                   null: false
-      t.string :zoom_url,                  null: false
-      t.string :zoom_password,             null: false
+      t.string :zoom_url,                    null: false
+      t.string :zoom_password,               null: false
       t.references :user,                  null: false, foreign_key: true
       t.timestamps
     end

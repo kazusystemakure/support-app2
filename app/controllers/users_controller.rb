@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :namekana, :sex, :hobby, :email, :password ,:password_confirmation, :postal_code, :prefecture, :city, :address, :phone_number, :birth_date, :publish_id, :skill, :introduction, :image)
+    params.require(:user).permit(:name, :namekana, :introduction, :email, :password ,:password_confirmation, :postal_code, :prefecture, :city, :address, :phone_number, :skill, :birth_date, :birth_date, :publish_id, :image)
   end
   
   def move_to_new_user_session
