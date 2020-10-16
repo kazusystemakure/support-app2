@@ -99,11 +99,20 @@
   min-width: 100%;
   padding: 10px 5px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .edit-btn {
+  background-color: #f7d2a1;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(78, 78, 78);
+  margin: 15px 15px 10px 0px;
+  padding: 10px 20px;
+}
+
+.teacher-edit-btn {
   background-color: #f7d2a1;
   font-size: 15px;
   font-weight: bold;

@@ -6,7 +6,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :name,               null: false, default: ""
       t.string :namekana,           null: false, default: ""
-      t.string :introduction,       default: ""
+      t.integer :sex,               null: false
+      t.string :hobby,              null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :postal_code,        null: false, default: ""
@@ -14,9 +15,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :city,               null: false, default: ""
       t.string :address,            null: false, default: ""
       t.string :phone_number ,      null: false, default: ""
-      t.string :skill,              default: ""
       t.date :birth_date,           null: false
       t.integer :publish_id,        default: ""
+      t.string :skill,              null: false
+      t.string :introduction,       default: ""
+      t.string :homepage_url,       null: false,default: ""
+      t.string :instargam_url,      null: false,default: ""
+      t.string :facebook_url,       null: false,default: ""
+      t.string :youtube_url,        null: false,default: ""
 
       ## Recoverable
       t.string   :reset_password_token

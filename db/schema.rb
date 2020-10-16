@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_045158) do
+ActiveRecord::Schema.define(version: 2020_10_15_073732) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -58,10 +58,22 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "homepage_url"
+    t.string "instagram_url"
+    t.string "facebook_url"
+    t.string "youtube_url"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_teachers_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "namekana", default: "", null: false
-    t.string "introduction", default: ""
+    t.integer "sex", null: false
+    t.string "hobby", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "postal_code", default: "", null: false
@@ -69,9 +81,10 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
     t.string "city", default: "", null: false
     t.string "address", default: "", null: false
     t.string "phone_number", default: "", null: false
-    t.string "skill", default: ""
     t.date "birth_date", null: false
     t.integer "publish_id"
+    t.string "skill", null: false
+    t.string "introduction", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -85,4 +98,5 @@ ActiveRecord::Schema.define(version: 2020_10_08_045158) do
   add_foreign_key "lessons", "users"
   add_foreign_key "orders", "lessons"
   add_foreign_key "orders", "users"
+  add_foreign_key "teachers", "users"
 end

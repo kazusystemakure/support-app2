@@ -6,14 +6,18 @@ class User < ApplicationRecord
 
   has_many :lessons
   has_many :orders
+  has_one :teacher
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :publish
+  belongs_to_active_hash :sex
 
   with_options presence: true do
     validates :name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters.' }
     validates :namekana, format: { with: /\A[ァ-ヶー－]+\z/, message: 'Full-width katakana characters.' }
+    validates :sex
+    validates :hobby
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' }
     validates :prefecture
     validates :city
