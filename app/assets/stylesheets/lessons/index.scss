@@ -9,7 +9,7 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('top.png');
+  background-image: image-url('head13.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -19,15 +19,17 @@ a {
   justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 0 30px rgba(0, 0, 0, 1.0);
 }
 
 .service-title {
   font-size: 8vh;
+  
 }
 
 .service-explain {
   font-size: 2.5vh;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 1.0);
   line-height: 40px;
 }
 
@@ -59,7 +61,7 @@ a {
 
 .select-reason-contents>.title {
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 4.5vh;
   font-weight: bold;
   margin-bottom: 8vh;
   position: relative;
@@ -180,15 +182,15 @@ a {
 
 .feature-contents>.title {
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 4vh;
   font-weight: bold;
-  margin-bottom: 5vh;
+  margin-bottom: 8vh;
   position: relative;
 }
 
 .feature-contents>.title::after {
   content: '';
-  width: 200px;
+  width: 500px;
   height: 4px;
   background-color: #c58052;
   position: absolute;
@@ -201,8 +203,10 @@ a {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #c58052;
+  color: #f8f8f8;
   font-weight: bold;
+  padding: 10px;
+  background-color: #c58052;
 }
 
 .feature-lists {
@@ -242,7 +246,7 @@ a {
 }
 
 .item-contents>.title {
-  font-size: 5vh;
+  font-size: 4vh;
   line-height: 1.4;
   font-weight: bold;
 }

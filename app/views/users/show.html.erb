@@ -19,27 +19,26 @@
         <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
       <% end %>
     </div>
-
-    <div class='item-contents'>
-      <h2 class='title-participation-list'>参加レッスン一覧</h2>
+    <div class='lesson-contents'>
+      <h2 class='title-participation-list'>購入レッスン一覧</h2>
       <p>購入後は、レッスン詳細画面にZOOM IDとパスワードが表示されます。</p>
-      <ul class='item-lists'>
+      <ul class='lesson-lists'>
           <% @orders.each do |order| %>
             <li class='list'>
               <%= link_to lesson_path(order.lesson_id) do %>
-                <div class='item-img-content'>
-                  <%= image_tag order.lesson.image, class: "item-img" %>
+                <div class='lesson-img-content'>
+                  <%= image_tag order.lesson.image, class: "lesson-img" %>
                     <% if order.lesson.lesson_date < Date.today %>
                       <div class='sold-out'>
                         <span>END!!</span>
                       </div>
                     <% end %>
                 </div>
-                <div class='item-info'>
-                  <h3 class='item-name'>
+                <div class='lesson-info'>
+                  <h3 class='lesson-name'>
                     <%= order.lesson.name %>
                   </h3>
-                  <div class='item-price'>
+                  <div class='lesson-price'>
                     <span><%= order.lesson.price %>円<br>(税込み)</span>
                     <div class='star-btn'>
                       <%= image_tag "star.png", class:"star-icon" %>
@@ -53,26 +52,26 @@
       </ul>
     </div>
 
-
-    <div class='item-contents'>
+    <div class='lesson-contents'>
       <h2 class='title-held-list'><%= @user.name %>さん 開催レッスン一覧</h2>
-      <ul class='item-lists'>
+      <%= link_to '新規レッスン追加', new_lesson_path, class: "subtitle" %>
+      <ul class='lesson-lists'>
         <% @lessons.each do |lesson| %>
           <li class='list'>
             <%= link_to lesson_path(lesson.id) do %>
-              <div class='item-img-content'>
-                <%= image_tag lesson.image, class: "item-img" %>
+              <div class='lesson-img-content'>
+                <%= image_tag lesson.image, class: "lesson-img" %>
                   <% if lesson.lesson_date < Date.today %>
                     <div class='sold-out'>
                       <span>END!!</span>
                     </div>
                   <% end %>
               </div>
-              <div class='item-info'>
-                <h3 class='item-name'>
+              <div class='lesson-info'>
+                <h3 class='lesson-name'>
                   <%= lesson.name %>
                 </h3>
-                <div class='item-price'>
+                <div class='lesson-price'>
                   <span><%= lesson.price %>円<br>(税込み)</span>
                   <div class='star-btn'>
                     <%= image_tag "star.png", class:"star-icon" %>
