@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :move_to_new_user_session
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
     @lessons = @user.lessons

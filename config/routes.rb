@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :orders, only: [:index, :create]
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
 end

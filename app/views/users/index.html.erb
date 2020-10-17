@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部のキャッチ部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+    スキマ時間で広島を健康にする。
+    </h2>
+    <p class='service-explain'>
+      人生100年時代で、働くも遊ぶも、健康は必須。
+    </p>
+    <p class='service-explain2'>
+      〜スキマ時間を健康で埋める〜
+    </p>
+  </div>
+
+  <div class='top-back'>
+    <div class='item-contents'>
+      <h2 class='title'>インストラクターご紹介！</h2>
+      <ul class='item-lists'>
+        <% @users.each do |user| %>
+          <% if user.publish_id == 2 %>
+            <li class='list'>
+              <%= link_to user_path(user.id) do %>
+                <div class='item-img-content'>
+                  <%= image_tag user.image, class: "item-img" %>
+                </div>
+                <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= user.name %>
+                  </h3>
+                  <div class='item-price'>
+                    <span><%= user.skill %><br></span>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<%= render "shared/footer" %>
