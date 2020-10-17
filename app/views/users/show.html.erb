@@ -7,28 +7,78 @@
     </div>
     <div class="profile-content">
       <span class="profile-name"><%= @user.name %></span>
-      <span class="profile-job"><%= @user.skill %></span>
-      <span class="profile-intro"><%= @user.introduction%></span>
+      <% if user_signed_in? && @user.publish_id == 2 %>
+        <span class="profile-job"><%= @user.skill %></span>
+        <span class="profile-intro"><%= @user.introduction%></span>
+      <% end %>
     </div>
-    <div class="sns-content">
-      <%= link_to image_tag('insta.png' , size: '50x50'), "/", class: "sns-btn" %>
-      <%= link_to image_tag('facebook.png' , size: '50x50'), "/", class: "sns-btn" %>
-    </div>
+
     <div class=edit-box>
       <% if user_signed_in? && current_user.id == @user.id %>
         <%= link_to '会員情報 編集', edit_user_path, class: "edit-btn" %>
       <% end %>
     </div>
-    <div class='lesson-contents'>
-      <h2 class='title-participation-list'>購入レッスン一覧</h2>
-      <p>購入後は、レッスン詳細画面にZOOM IDとパスワードが表示されます。</p>
-      <ul class='lesson-lists'>
-          <% @orders.each do |order| %>
+
+    <div class=edit-box>
+      <% if user_signed_in? && current_user.id == @user.id && @user.publish_id == 2%>
+        <%= link_to '新規レッスン追加', new_lesson_path, class: "edit-btn" %>
+      <% end %>
+    </div>
+
+    <div class=edit-box>
+      <% if user_signed_in? && @user.publish_id == 2 %>
+        <div class="sns-content">
+          <%= link_to image_tag('insta.png' , size: '50x50'), "/", class: "sns-btn" %>
+          <%= link_to image_tag('facebook.png' , size: '50x50'), "/", class: "sns-btn" %>
+        </div>
+      <% end %>
+    </div>
+    
+    <% if user_signed_in? && current_user.id == @user.id && @user.publish_id == 1 %>
+      <div class='lesson-contents'>
+        <h2 class='title-participation-list'>購入レッスン一覧</h2>
+        <p>購入後は、レッスン詳細画面にZOOM IDとパスワードが表示されます。</p>
+        <ul class='lesson-lists'>
+            <% @orders.each do |order| %>
+              <li class='list'>
+                <%= link_to lesson_path(order.lesson_id) do %>
+                  <div class='lesson-img-content'>
+                    <%= image_tag order.lesson.image, class: "lesson-img" %>
+                      <% if order.lesson.lesson_date < Date.today %>
+                        <div class='sold-out'>
+                          <span>END!!</span>
+                        </div>
+                      <% end %>
+                  </div>
+                  <div class='lesson-info'>
+                    <h3 class='lesson-name'>
+                      <%= order.lesson.name %>
+                    </h3>
+                    <div class='lesson-price'>
+                      <span><%= order.lesson.price %>円<br>(税込み)</span>
+                      <div class='star-btn'>
+                        <%= image_tag "star.png", class:"star-icon" %>
+                        <span class='star-count'>0</span>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? && @user.publish_id == 2 %>
+      <div class='lesson-contents'>
+        <h2 class='title-held-list'><%= @user.name %>さん 開催レッスン一覧</h2>
+        <ul class='lesson-lists'>
+          <% @lessons.each do |lesson| %>
             <li class='list'>
-              <%= link_to lesson_path(order.lesson_id) do %>
+              <%= link_to lesson_path(lesson.id) do %>
                 <div class='lesson-img-content'>
-                  <%= image_tag order.lesson.image, class: "lesson-img" %>
-                    <% if order.lesson.lesson_date < Date.today %>
+                  <%= image_tag lesson.image, class: "lesson-img" %>
+                    <% if lesson.lesson_date < Date.today %>
                       <div class='sold-out'>
                         <span>END!!</span>
                       </div>
@@ -36,10 +86,10 @@
                 </div>
                 <div class='lesson-info'>
                   <h3 class='lesson-name'>
-                    <%= order.lesson.name %>
+                    <%= lesson.name %>
                   </h3>
                   <div class='lesson-price'>
-                    <span><%= order.lesson.price %>円<br>(税込み)</span>
+                    <span><%= lesson.price %>円<br>(税込み)</span>
                     <div class='star-btn'>
                       <%= image_tag "star.png", class:"star-icon" %>
                       <span class='star-count'>0</span>
@@ -49,41 +99,9 @@
               <% end %>
             </li>
           <% end %>
-      </ul>
-    </div>
-
-    <div class='lesson-contents'>
-      <h2 class='title-held-list'><%= @user.name %>さん 開催レッスン一覧</h2>
-      <%= link_to '新規レッスン追加', new_lesson_path, class: "subtitle" %>
-      <ul class='lesson-lists'>
-        <% @lessons.each do |lesson| %>
-          <li class='list'>
-            <%= link_to lesson_path(lesson.id) do %>
-              <div class='lesson-img-content'>
-                <%= image_tag lesson.image, class: "lesson-img" %>
-                  <% if lesson.lesson_date < Date.today %>
-                    <div class='sold-out'>
-                      <span>END!!</span>
-                    </div>
-                  <% end %>
-              </div>
-              <div class='lesson-info'>
-                <h3 class='lesson-name'>
-                  <%= lesson.name %>
-                </h3>
-                <div class='lesson-price'>
-                  <span><%= lesson.price %>円<br>(税込み)</span>
-                  <div class='star-btn'>
-                    <%= image_tag "star.png", class:"star-icon" %>
-                    <span class='star-count'>0</span>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+        </ul>
+      </div>
+    <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>
