@@ -52,7 +52,45 @@ a {
   height: 9vh;
 }
 
-/* //画面上部の「人生を変えるフリマアプリ」帯部分 */
+.top-back{
+  background-image: image-url('topback3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin-top: 20px;
+}
+
+.sukima-point {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 1.0);
+  padding-bottom: 30px;
+}
+
+.sukima-top {
+  font-size: 2vh;
+}
+
+.sukima-content {
+  text-align: center;
+  font-size: 2vh;
+  font-weight: bold;
+  margin: 3vh 8vh;
+  position: relative;
+  background-color: #a0928c;
+  padding: 10px 20px;
+}
+
+.sukima-title {
+  font-size: 4.5vh;
+  font-weight: bold;
+  margin-bottom: 1.5vh;
+}
+
 
 /* FURIMAが選ばれる3つの理由部分 */
 .select-reason-contents {
@@ -118,7 +156,7 @@ a {
 }
 
 .reason-list-blue-text {
-  color: #c58052;
+  color: #a15600;
 }
 
 .reason-list-description {
@@ -201,7 +239,7 @@ a {
 
 .feature-contents>.subtitle {
   font-size: 3vh;
-  margin: 1vh 0;
+  margin: 3vh 0;
   text-decoration: none;
   color: #f8f8f8;
   font-weight: bold;
