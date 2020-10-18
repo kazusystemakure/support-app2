@@ -213,3 +213,6 @@
 ### rails db:migrate
 ### rails s
 
+### rails (6.0.3.3)
+### ruby 2.6.5
+### payjp (0.0.7)

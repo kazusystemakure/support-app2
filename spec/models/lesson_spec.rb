@@ -55,7 +55,6 @@ RSpec.describe Lesson, type: :model do
         expect(@lesson.errors.full_messages).to include('Price Out of setting range')
       end
 
-
       it 'lesson_dateが空では登録できないこと' do
         @lesson.lesson_date = nil
         @lesson.valid?
