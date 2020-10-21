@@ -9,8 +9,7 @@ app/assets/stylesheets/items/new.css %>
     <h2 class="items-sell-title">レッスン内容編集</h2>
     <%= form_with model: @lesson, url: lesson_path, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# レッスン画像 %>
     <div class="img-upload">
@@ -123,7 +122,7 @@ app/assets/stylesheets/items/new.css %>
     </ul>
     <%= link_to image_tag('rogo.png' , size: '185x185'), "/" %>
     <p class="inc">
-      ©︎スキマ支援,Inc.
+      ©︎スキマ健康,Inc.
     </p>
   </footer>
 </div>

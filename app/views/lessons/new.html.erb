@@ -6,7 +6,7 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">レッスン内容入力</h2>
     <%= form_with model: @lesson, url: lessons_path, local: true do |f| %>
-      <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
       <%= render 'shared/error_messages', model: f.object %>
 
       <div class="img-upload">

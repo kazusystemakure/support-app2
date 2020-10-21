@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:index, :create]
+
   def index
-    @lesson = Lesson.find(params[:lesson_id])
     @order = Order.new
   end
 
   def create
-    @lesson = Lesson.find(params[:lesson_id])
     @order = Order.new(order_params)
     if @order.valid?
       pay_lesson
@@ -20,6 +20,10 @@ class OrdersController < ApplicationController
 
   def order_params
     params.permit.merge(user_id: current_user.id, lesson_id: params[:lesson_id], token: params[:token])
+  end
+
+  def set_item
+    @lesson = Lesson.find(params[:lesson_id])
   end
 
   def pay_lesson
