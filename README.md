@@ -37,16 +37,17 @@
 ## 「人のヤカンの水の温度を適温にする」
 
 ### 現状と課題
-#### ①人生100年時代で、長く働き、長く遊ぶ。寿命が延びてライフスタイルが変化する状況下では、健康に投資する時代になった。
-#### ②仕事、家事、育児、男女関係なく、誰もが忙しい時代に、運動のために時間をとれない。
-#### ③時間の価値が高まり、可処分時間の奪い合いに、運動は選択されずらい。
-#### ④しかし、当然ながら忙しくなれば、疲れやストレスが増え、ストレスの蓄積はパフォーマンスの低下、病気に繋がる。
+#### ①健康に投資する時代（人生100年時代で、長く働き、長く遊ぶ。ライフスタイルが変化する状況下）
+#### ②運動に時間を取れない（仕事、家事、育児、男女関係なく、誰もが忙しい時代に、運動のために時間をとれない。）
+#### ③可処分時間の奪い合いに勝てない（時間の価値が高まり、可処分時間で運動は選択されずらい。）
+#### ④パフォーマンスの低下、病気に繋がる（当然ながら忙しくなれば、疲れやストレスが増え、それらが蓄積していく。）
 
 ### 課題解決
-#### ・多くの人が忙しく、運動の時間を取りずらい中で、スキマ時間を運動や健康で埋め、広島を健康にする。
-#### ・ヤカンの水が熱くなり、イライラやストレスが蓄積しているなら、ヤカンの水の温度を下げる。
-#### ・ヤカンの水が冷たく、不安やネガティブな状態であるなら、ヤカンの水の温度上げる。
-#### ・健康とは、人として高いパフォーマンス状態、幸福感を感じやすい状態で、「ヤカンの水の温度が適温状態」であること。我々は、スキマ時間で健康を目指す。
+#### ・スキマ時間を利用する。（スキマ時間を運動や健康で埋める）
+#### ・ヤカンの水が熱い状態（イライラやストレスが蓄積）に対して、ヤカンの水の温度を下げる。（リラックス、気分転換）
+#### ・ヤカンの水が冷たい状態（不安やネガティブ）に対して、、ヤカンの水の温度上げる。（活気づける。モチベーションアップツールにする）
+
+## 健康とは、人として高いパフォーマンス状態、幸福感を感じやすい状態で、「ヤカンの水の温度が適温状態」であること。我々は、スキマ時間で健康を目指す。
 
 ### [対象者 例]
 #### ・在宅ワーク、仕事で精神的にも疲れが蓄積しているサラリーマン
@@ -56,7 +57,7 @@
 
 ### 継続サポート
 #### ・インストラクターは広島で活動する人たちで、物理的親近感と、親しみのある雰囲気で、運動を楽しみながら継続をサポート。
-#### ・健康は知識の習得ではなく、自分自身が体験から獲得するもので、No.1講師である必要はなく、親近感の方が重要だ。
+#### ・健康は知識の習得ではなく、自分自身が体験から獲得するもので、No.1講師である必要はなく、親近感の方が重要である。
 
 
 # 要件定義
@@ -103,52 +104,52 @@
 ![スキマ健康トップページ](https://user-images.githubusercontent.com/70381817/96676779-1f45c900-13a9-11eb-8237-1424538d5a23.gif)
 
 ### ユーザー新規登録
-### https://gyazo.com/a07656341888da47839e2ebb4b3afc84
+#### https://gyazo.com/a07656341888da47839e2ebb4b3afc84
 ![ユーザー新規登録](https://user-images.githubusercontent.com/70381817/96952851-bede9500-152a-11eb-8197-512339277275.gif)
 
 ### ユーザーログイン
-### https://gyazo.com/84698c4d248523dc364af96a7b5b0bff
+#### https://gyazo.com/84698c4d248523dc364af96a7b5b0bff
 ![ログイン](https://user-images.githubusercontent.com/70381817/96952912-dddd2700-152a-11eb-8542-0a9351288e77.gif)
 
 ### マイページ（インストラクターログイン後）
-### https://gyazo.com/fb7925b5b4e693f88164b4dbb485c547
+#### https://gyazo.com/fb7925b5b4e693f88164b4dbb485c547
 ![マイページ（インストラクターログイン）](https://user-images.githubusercontent.com/70381817/96952946-f3eae780-152a-11eb-879e-295c38945a1b.gif)
 
 ### 新規レッスン追加
-### https://gyazo.com/d2038c7fb0f8058f118115c97864dcaa
+#### https://gyazo.com/d2038c7fb0f8058f118115c97864dcaa
 ![新規レッスン追加](https://user-images.githubusercontent.com/70381817/96954294-15010780-152e-11eb-8ead-6906af0d5bb8.gif)
 
 ### レッスン詳細ページ
-### https://gyazo.com/57c1362cca4e8293f5e2f98db811bf51
+#### https://gyazo.com/57c1362cca4e8293f5e2f98db811bf51
 ![一覧から詳細ページへ](https://user-images.githubusercontent.com/70381817/96954357-36fa8a00-152e-11eb-8664-3c5405c2fd95.gif)
 
 ### レッスン編集ページ
-### https://gyazo.com/4667ed0dc7224ebf3d944888a5a198c0
+#### https://gyazo.com/4667ed0dc7224ebf3d944888a5a198c0
 ![レッスン編集d](https://user-images.githubusercontent.com/70381817/96954448-61e4de00-152e-11eb-9de3-ffba253665d1.gif)
 
 ### レッスン削除
-### https://gyazo.com/f414250683ef92204dfc50b875b7a5f4
+#### https://gyazo.com/f414250683ef92204dfc50b875b7a5f4
 ![削除](https://user-images.githubusercontent.com/70381817/96954496-788b3500-152e-11eb-836a-899c04a4fc03.gif)
 
 ### レッスン購入(参加者ログイン後)
-### https://gyazo.com/98ebc8fc64b99d41cfae059e89f45dde
-### https://gyazo.com/4c99e0348101697c911b1ebf2a5257a0
+#### https://gyazo.com/98ebc8fc64b99d41cfae059e89f45dde
+#### https://gyazo.com/4c99e0348101697c911b1ebf2a5257a0
 ![購入機能](https://user-images.githubusercontent.com/70381817/96954558-95276d00-152e-11eb-9692-67f7c274239d.gif)
 
 ### レッスン購入後、マイページへ(Zoom情報確認)
-### https://gyazo.com/fda0239ca2bac9a2d5ba2dbc99fcf64f
-### https://gyazo.com/12b946b49a33bbbb27d8ab9ca394e868
+#### https://gyazo.com/fda0239ca2bac9a2d5ba2dbc99fcf64f
+#### https://gyazo.com/12b946b49a33bbbb27d8ab9ca394e868
 ![購入確認Zoom確認](https://user-images.githubusercontent.com/70381817/96954589-a83a3d00-152e-11eb-823d-510bc720beb8.gif)
 
 ### ユーザー情報編集
-### https://gyazo.com/aef3a8ee57a081d98811290f0be4b9aa
+#### https://gyazo.com/aef3a8ee57a081d98811290f0be4b9aa
 ![ユーザー情報編集](https://user-images.githubusercontent.com/70381817/96954680-d750ae80-152e-11eb-8e82-03879802bcbe.gif)
 
 ### インストラクター一覧表示(2名登録中)
-### https://gyazo.com/c76d5def1bc028fdb7cb1bbc62d7058c
+#### https://gyazo.com/c76d5def1bc028fdb7cb1bbc62d7058c
 
 ### インストラクター一覧からインストラクターマイページへ（参加者ログイン）
-### https://gyazo.com/2238103ce14ad6b197ed6db8c7c6574c
+#### https://gyazo.com/2238103ce14ad6b197ed6db8c7c6574c
 ![インストラクター一覧から紹介ページ](https://user-images.githubusercontent.com/70381817/96954646-c6a03880-152e-11eb-9cda-435b6df7e0e9.gif)
 
 
